@@ -1,0 +1,16 @@
+<h4>Todo List</h4>
+
+
+<app-table [ths]="['#','Id','Work','IsCompleted','CreadtedDate','Progress']">
+    <tr *ngFor="let t of newTodos let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{t.id}}</td>
+        <td>{{t.work}}</td>
+        <td>{{t.isCompleted}}</td>
+        <td>{{t.createdDate | date: 'dd.MM.yyyy HH:mm:ss'}}</td>
+        <td>
+            <button (click)="completeTodo(i)" *ngIf="!t.isCompleted">Complete</button>
+            <button (click)="delete(t.id)" style="margin-left: 2px;">Delete</button>
+        </td>
+    </tr>
+</app-table>

@@ -1,0 +1,7 @@
+<h1>Todos Component</h1>
+<app-todo-add (addEvent)="add($event)"></app-todo-add>
+<hr>
+<app-todo-list 
+[newTodos]="todos" 
+(completedEvent)="completedEvent($event)"
+(deleteEvent)="delete($event)"></app-todo-list>
